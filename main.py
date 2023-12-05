@@ -39,6 +39,8 @@ class Syncer:
             print("You likely have a configuration issue, syncthing is reporting a sync -- but we dont see the file mapped")
             return False
 
+        dirname = os.path.dirname(filename)
+        self.webdav.mkdir(f"import/{dirname}")
         self.webdav.upload_sync(
             remote_path=f"import/{filename}", local_path=fullpath)
         return True
