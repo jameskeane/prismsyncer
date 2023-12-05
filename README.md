@@ -25,7 +25,7 @@ services:
     syncthing:
         ....
     prismsyncer:
-        image: <image>
+        image: jjk7/prismsyncer:latest
         container_name: prismsyncer
         environment:
             - SYNCTHING_API_KEY=<your api key>
